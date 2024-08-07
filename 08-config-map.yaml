@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-map
+data:
+  course: 'kubernetes'
+  trainer: 'puneeth'
+  github: 'https://github.com/puneethtiruveedula'
