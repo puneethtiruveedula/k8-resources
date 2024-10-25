@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  # these labels are deployment related labels
+  labels:
+    app: nginx
+    purpose: deployment
+    tier: web
+  spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx
+      tier: web
+      project: test-project
+  # pod definition
+template:
+  metadata:
+    labels:
+      app: nginx
+      tier: web
+      project: test-project
+      extra-key: exta-value
+  spec:
+    containers:
+    - name: nginx
+      image: nginx
