@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: efs-dynamiv
+  name: efs-dynamic
 spec:
   accessModes:
   - ReadWriteMany
