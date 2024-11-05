@@ -45,5 +45,18 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: ebs-static
-
 # A node selector is a field in PodSpec that specifies a map of key-value pairs that controls where pods are scheduled on nodes
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-lb
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: ebs-static
+    project: expense
+  ports:
+  - protocol: TCP
+    port: 80 #service-port
+    targetPort: 80
